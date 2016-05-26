@@ -1,0 +1,3261 @@
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = ;
+	document.CALLGRAPH = ;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "."</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="#pkg-constants">Constants</a></dd>
+			
+			
+			
+				
+				<dd><a href="#AddrTypeLen">func AddrTypeLen(addrtype string) (int, error)</a></dd>
+			
+				
+				<dd><a href="#CheckTypedAddr">func CheckTypedAddr(inAddr string) (outAddr string, err error)</a></dd>
+			
+				
+				<dd><a href="#CheckTypedAddrs">func CheckTypedAddrs(inAddrs []string) (outAddrs []string, errs []error)</a></dd>
+			
+				
+				<dd><a href="#CmpAltoMsgs">func CmpAltoMsgs(m1, m2 AltoMsg) (errMsg string)</a></dd>
+			
+				
+				<dd><a href="#CostTypeListContains">func CostTypeListContains(list []CostType, ct CostType) bool</a></dd>
+			
+				
+				<dd><a href="#CostTypeListContainsAll">func CostTypeListContainsAll(list []CostType, cts []CostType) bool</a></dd>
+			
+				
+				<dd><a href="#CostTypeListEqual">func CostTypeListEqual(a, b []CostType) bool</a></dd>
+			
+				
+				<dd><a href="#CostTypeSetEqual">func CostTypeSetEqual(a, b []CostType) bool</a></dd>
+			
+				
+				<dd><a href="#FromJsonBytes">func FromJsonBytes(msg AltoMsg, b []byte) []error</a></dd>
+			
+				
+				<dd><a href="#ParseTypedAddr">func ParseTypedAddr(addr string) (net.IP, error)</a></dd>
+			
+				
+				<dd><a href="#PrintAltoMsg">func PrintAltoMsg(msg AltoMsg, w io.Writer)</a></dd>
+			
+				
+				<dd><a href="#ReadJson">func ReadJson(msg AltoMsg, r io.Reader) []error</a></dd>
+			
+				
+				<dd><a href="#TestCheckTypedAddr">func TestCheckTypedAddr(test *testing.T)</a></dd>
+			
+				
+				<dd><a href="#TestParseTypedAddr">func TestParseTypedAddr(test *testing.T)</a></dd>
+			
+				
+				<dd><a href="#ToJsonBytes">func ToJsonBytes(msg AltoMsg) ([]byte, error)</a></dd>
+			
+				
+				<dd><a href="#WriteJson">func WriteJson(msg AltoMsg, w io.Writer) error</a></dd>
+			
+			
+				
+				<dd><a href="#AltoConn">type AltoConn</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewAltoConn">func NewAltoConn() *AltoConn</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.CostMap">func (this *AltoConn) CostMap(costType CostType) (*CostMap, *ServerResp)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.EndpointCost">func (this *AltoConn) EndpointCost(costType CostType, srcs, dsts, constraints []string) (*EndpointCost, *ServerResp)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.EndpointProp">func (this *AltoConn) EndpointProp(addrs, propTypes []string) (*EndpointProp, *ServerResp)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.FilteredCostMap">func (this *AltoConn) FilteredCostMap(costType CostType, srcs, dsts, constraints []string) (*CostMap, *ServerResp)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.FilteredNetworkMap">func (this *AltoConn) FilteredNetworkMap(addrTypes []string, pids []string) (*NetworkMap, *ServerResp)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.GetIRD">func (this *AltoConn) GetIRD(uri string) (*Directory, *ServerResp)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.LoadRootDir">func (this *AltoConn) LoadRootDir(uri string) (time.Duration, []error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.NetworkMap">func (this *AltoConn) NetworkMap() (*NetworkMap, *ServerResp)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.SendReq">func (this *AltoConn) SendReq(uri string, accept []string, req AltoMsg) *ServerResp</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.SetProxy">func (this *AltoConn) SetProxy(uri string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.SetSkipVerify">func (this *AltoConn) SetSkipVerify(skipVerify bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.SetTimeout">func (this *AltoConn) SetTimeout(timeout time.Duration)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.SkipVerify">func (this *AltoConn) SkipVerify() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#AltoConn.Timeout">func (this *AltoConn) Timeout() time.Duration</a></dd>
+				
+			
+				
+				<dd><a href="#AltoMsg">type AltoMsg</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewAltoMsg">func NewAltoMsg(mediaType string, r io.Reader, contentLen int) (AltoMsg, []error)</a></dd>
+				
+				
+			
+				
+				<dd><a href="#CIDRError">type CIDRError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CIDRError.Error">func (this CIDRError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="#CIDRInfo">type CIDRInfo</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Cost">type Cost</a></dd>
+				
+				
+			
+				
+				<dd><a href="#CostMap">type CostMap</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewCostMap">func NewCostMap() *CostMap</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.AddDepVTag">func (this *CostMap) AddDepVTag(vtag VTag)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.AllDsts">func (this *CostMap) AllDsts() []string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.AllSrcs">func (this *CostMap) AllSrcs() []string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.CostIter">func (this *CostMap) CostIter(f func(src, dst string, cost Cost) bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.CostType">func (this *CostMap) CostType() CostType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.DepVTag">func (this *CostMap) DepVTag() VTag</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.DepVTags">func (this *CostMap) DepVTags() []VTag</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.FromJsonMap">func (this *CostMap) FromJsonMap(jm JsonMap) []error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.GetCost">func (this *CostMap) GetCost(src, dst string) (Cost, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.GetCosts">func (this *CostMap) GetCosts() map[string]map[string]Cost</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.MediaType">func (this *CostMap) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.SetCost">func (this *CostMap) SetCost(src, dst string, cost Cost)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.SetCostType">func (this *CostMap) SetCostType(costType CostType)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.SrcIter">func (this *CostMap) SrcIter(f func(src string, costs map[string]Cost) bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMap.ToJsonMap">func (this *CostMap) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#CostMapFilter">type CostMapFilter</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewCostMapFilter">func NewCostMapFilter() *CostMapFilter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMapFilter.FromJsonMap">func (this *CostMapFilter) FromJsonMap(jm JsonMap) (errors []error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMapFilter.MediaType">func (this *CostMapFilter) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostMapFilter.ToJsonMap">func (this *CostMapFilter) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#CostType">type CostType</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostType.String">func (this CostType) String() string</a></dd>
+				
+			
+				
+				<dd><a href="#CostTypeDescription">type CostTypeDescription</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#CostTypeDescription.String">func (this CostTypeDescription) String() string</a></dd>
+				
+			
+				
+				<dd><a href="#DirResource">type DirResource</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Directory">type Directory</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewDirectory">func NewDirectory() *Directory</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Directory.AddResource">func (this *Directory) AddResource(id, uri, mediaType, accepts string, uses, costTypeNames, propTypes []string, constraints bool) *DirResource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Directory.FromJsonMap">func (this *Directory) FromJsonMap(jm JsonMap) (errors []error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Directory.MediaType">func (this *Directory) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Directory.ToJsonMap">func (this *Directory) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#EndpointCost">type EndpointCost</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewEndpointCost">func NewEndpointCost() *EndpointCost</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.CostIter">func (this *EndpointCost) CostIter(f func(src, dst string, cost Cost) bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.CostType">func (this *EndpointCost) CostType() CostType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.FromJsonMap">func (this *EndpointCost) FromJsonMap(jm JsonMap) []error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.GetCost">func (this *EndpointCost) GetCost(src, dst string) (Cost, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.GetCosts">func (this *EndpointCost) GetCosts() map[string]map[string]Cost</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.IsNormalized">func (this *EndpointCost) IsNormalized() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.MediaType">func (this *EndpointCost) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.Normalize">func (this *EndpointCost) Normalize() []error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.SetCost">func (this *EndpointCost) SetCost(src, dst string, cost Cost)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.SetCostType">func (this *EndpointCost) SetCostType(costType CostType)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.SrcIter">func (this *EndpointCost) SrcIter(f func(src string, costs map[string]Cost) bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCost.ToJsonMap">func (this *EndpointCost) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#EndpointCostParams">type EndpointCostParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewEndpointCostParams">func NewEndpointCostParams() *EndpointCostParams</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCostParams.FromJsonMap">func (this *EndpointCostParams) FromJsonMap(jm JsonMap) (errors []error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCostParams.MediaType">func (this *EndpointCostParams) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointCostParams.ToJsonMap">func (this *EndpointCostParams) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#EndpointProp">type EndpointProp</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewEndpointProp">func NewEndpointProp() *EndpointProp</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.AddDepVTag">func (this *EndpointProp) AddDepVTag(vtag VTag)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.AddrIter">func (this *EndpointProp) AddrIter(f func(addr string, addrProps map[string]string) bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.DepVTags">func (this *EndpointProp) DepVTags() []VTag</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.FromJsonMap">func (this *EndpointProp) FromJsonMap(jm JsonMap) []error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.GetProp">func (this *EndpointProp) GetProp(addr, name string) (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.GetProps">func (this *EndpointProp) GetProps() map[string]map[string]string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.MediaType">func (this *EndpointProp) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.PropIter">func (this *EndpointProp) PropIter(f func(addr, name, value string) bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.SetProp">func (this *EndpointProp) SetProp(addr, name, value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointProp.ToJsonMap">func (this *EndpointProp) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#EndpointPropParams">type EndpointPropParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewEndpointPropParams">func NewEndpointPropParams() *EndpointPropParams</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointPropParams.FromJsonMap">func (this *EndpointPropParams) FromJsonMap(jm JsonMap) (errors []error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointPropParams.MediaType">func (this *EndpointPropParams) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#EndpointPropParams.ToJsonMap">func (this *EndpointPropParams) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#ErrorResp">type ErrorResp</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewErrorResp">func NewErrorResp(code string) *ErrorResp</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ErrorResp.FromJsonMap">func (this *ErrorResp) FromJsonMap(jm JsonMap) (errors []error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ErrorResp.MediaType">func (this *ErrorResp) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ErrorResp.ToJsonMap">func (this *ErrorResp) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#JSONTypeError">type JSONTypeError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JSONTypeError.Error">func (this JSONTypeError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="#JsonMap">type JsonMap</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonMap.AddDepVTag">func (this *JsonMap) AddDepVTag(vtag VTag)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonMap.GetCostType">func (this *JsonMap) GetCostType() CostType</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonMap.GetDepVTags">func (this *JsonMap) GetDepVTags() []VTag</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonMap.GetMeta">func (this *JsonMap) GetMeta(create bool) *map[string]interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonMap.GetVTag">func (this *JsonMap) GetVTag() VTag</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonMap.SetCostType">func (this *JsonMap) SetCostType(costType CostType)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonMap.SetVTag">func (this *JsonMap) SetVTag(vtag VTag)</a></dd>
+				
+			
+				
+				<dd><a href="#NetworkMap">type NetworkMap</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewNetworkMap">func NewNetworkMap() *NetworkMap</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.AddCIDR">func (this *NetworkMap) AddCIDR(pid, addrType, cidr string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.AddCIDRs">func (this *NetworkMap) AddCIDRs(pid, addrtype string, cidrs []string) []error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.CIDRIter">func (this *NetworkMap) CIDRIter(f func(cidrInfo *CIDRInfo) bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.FromJsonMap">func (this *NetworkMap) FromJsonMap(jm JsonMap) []error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.IP2Pid">func (this *NetworkMap) IP2Pid(addr net.IP) (pid string, cidr net.IPNet, ok bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.MediaType">func (this *NetworkMap) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.PidAddrs">func (this *NetworkMap) PidAddrs(pid string) (cidrMap map[string][]string, ok bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.PidIter">func (this *NetworkMap) PidIter(f func(pid, addrtype, cidr string) bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.Print">func (this *NetworkMap) Print(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.SetVTag">func (this *NetworkMap) SetVTag(vtag VTag)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.ToJsonMap">func (this *NetworkMap) ToJsonMap() JsonMap</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMap.VTag">func (this *NetworkMap) VTag() VTag</a></dd>
+				
+			
+				
+				<dd><a href="#NetworkMapFilter">type NetworkMapFilter</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewNetworkMapFilter">func NewNetworkMapFilter() *NetworkMapFilter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMapFilter.FromJsonMap">func (this *NetworkMapFilter) FromJsonMap(jm JsonMap) (errors []error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMapFilter.MediaType">func (this *NetworkMapFilter) MediaType() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NetworkMapFilter.ToJsonMap">func (this *NetworkMapFilter) ToJsonMap() JsonMap</a></dd>
+				
+			
+				
+				<dd><a href="#Resource">type Resource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewResource">func NewResource(dirURI *url.URL, dirRes *DirResource, costTypeDefns map[string]CostTypeDescription) (*Resource, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Resource.Equal">func (this *Resource) Equal(other *Resource) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Resource.Print">func (this *Resource) Print(w io.Writer, prefix string)</a></dd>
+				
+			
+				
+				<dd><a href="#ResourceSet">type ResourceSet</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewResourceSet">func NewResourceSet() *ResourceSet</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.AddResources">func (this *ResourceSet) AddResources(dir *Directory, dirURI *url.URL) []error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.FindCostMap">func (this *ResourceSet) FindCostMap(netmap string, costType CostType) *Resource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.FindDefNetworkMap">func (this *ResourceSet) FindDefNetworkMap() *Resource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.FindEndpointCost">func (this *ResourceSet) FindEndpointCost(costType CostType, needConstraints bool) *Resource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.FindEndpointProp">func (this *ResourceSet) FindEndpointProp(propTypes []string) *Resource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.FindFilteredCostMap">func (this *ResourceSet) FindFilteredCostMap(netmap string, costType CostType, needConstraints bool) *Resource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.FindFilteredNetworkMap">func (this *ResourceSet) FindFilteredNetworkMap(netmap string) *Resource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.FindNetworkMaps">func (this *ResourceSet) FindNetworkMaps() []*Resource</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ResourceSet.Print">func (this *ResourceSet) Print(w io.Writer)</a></dd>
+				
+			
+				
+				<dd><a href="#ServerResp">type ServerResp</a></dd>
+				
+				
+			
+				
+				<dd><a href="#VTag">type VTag</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/target/altoconn.go">altoconn.go</a>
+			
+				<a href="/src/target/common.go">common.go</a>
+			
+				<a href="/src/target/costmap.go">costmap.go</a>
+			
+				<a href="/src/target/costmapfilter.go">costmapfilter.go</a>
+			
+				<a href="/src/target/directory.go">directory.go</a>
+			
+				<a href="/src/target/endpointcost.go">endpointcost.go</a>
+			
+				<a href="/src/target/endpointcostparams.go">endpointcostparams.go</a>
+			
+				<a href="/src/target/endpointprop.go">endpointprop.go</a>
+			
+				<a href="/src/target/endpointpropparams.go">endpointpropparams.go</a>
+			
+				<a href="/src/target/error.go">error.go</a>
+			
+				<a href="/src/target/error_types.go">error_types.go</a>
+			
+				<a href="/src/target/meta.go">meta.go</a>
+			
+				<a href="/src/target/networkmap.go">networkmap.go</a>
+			
+				<a href="/src/target/networkmapfilter.go">networkmapfilter.go</a>
+			
+				<a href="/src/target/resourceset.go">resourceset.go</a>
+			
+				<a href="/src/target/test-typed-addrs.go">test-typed-addrs.go</a>
+			
+				<a href="/src/target/typed-addrs.go">typed-addrs.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<pre>const (
+    <span id="CONTENT_TYPE_HDR">CONTENT_TYPE_HDR</span>   = &#34;Content-Type&#34;
+    <span id="CONTENT_LENGTH_HDR">CONTENT_LENGTH_HDR</span> = &#34;Content-Length&#34;
+    <span id="ACCEPT_HDR">ACCEPT_HDR</span>         = &#34;Accept&#34;
+)</pre>
+				<p>
+HTTP header names.
+</p>
+
+			
+				<pre>const (
+    <span id="MT_PREFIX">MT_PREFIX</span> = &#34;application/alto-&#34;
+    <span id="MT_SUFFIX">MT_SUFFIX</span> = &#34;+json&#34;
+
+    <span id="MT_DIRECTORY">MT_DIRECTORY</span>            = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;directory&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_NETWORK_MAP">MT_NETWORK_MAP</span>          = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;networkmap&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_NETWORK_MAP_FILTER">MT_NETWORK_MAP_FILTER</span>   = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;networkmapfilter&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_COST_MAP">MT_COST_MAP</span>             = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;costmap&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_COST_MAP_FILTER">MT_COST_MAP_FILTER</span>      = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;costmapfilter&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_ENDPOINT_COST">MT_ENDPOINT_COST</span>        = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;endpointcost&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_ENDPOINT_COST_PARAMS">MT_ENDPOINT_COST_PARAMS</span> = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;endpointcostparams&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_ENDPOINT_PROP">MT_ENDPOINT_PROP</span>        = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;endpointprop&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_ENDPOINT_PROP_PARAMS">MT_ENDPOINT_PROP_PARAMS</span> = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;endpointpropparams&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+    <span id="MT_ERROR">MT_ERROR</span>                = <a href="#MT_PREFIX">MT_PREFIX</a> + &#34;error&#34; + <a href="#MT_SUFFIX">MT_SUFFIX</a>
+)</pre>
+				<p>
+Media types.
+</p>
+
+			
+				<pre>const (
+    <span id="FN_META">FN_META</span>            = &#34;meta&#34;
+    <span id="FN_COST_TYPE">FN_COST_TYPE</span>       = &#34;cost-type&#34;
+    <span id="FN_COST_METRIC">FN_COST_METRIC</span>     = &#34;cost-metric&#34;
+    <span id="FN_COST_MODE">FN_COST_MODE</span>       = &#34;cost-mode&#34;
+    <span id="FN_VTAG">FN_VTAG</span>            = &#34;vtag&#34;
+    <span id="FN_DEPENDENT_VTAGS">FN_DEPENDENT_VTAGS</span> = &#34;dependent-vtags&#34;
+    <span id="FN_RESOURCE_ID">FN_RESOURCE_ID</span>     = &#34;resource-id&#34;
+    <span id="FN_TAG">FN_TAG</span>             = &#34;tag&#34;
+    <span id="FN_ADDRESS_TYPES">FN_ADDRESS_TYPES</span>   = &#34;address-types&#34;
+    <span id="FN_CONSTRAINTS">FN_CONSTRAINTS</span>     = &#34;constraints&#34;
+    <span id="FN_PIDS">FN_PIDS</span>            = &#34;pids&#34;
+    <span id="FN_SRCS">FN_SRCS</span>            = &#34;srcs&#34;
+    <span id="FN_DSTS">FN_DSTS</span>            = &#34;dsts&#34;
+    <span id="FN_ENDPOINTS">FN_ENDPOINTS</span>       = &#34;endpoints&#34;
+    <span id="FN_PROPERTIES">FN_PROPERTIES</span>      = &#34;properties&#34;
+)</pre>
+				<p>
+Common JSON field names.
+Field names which are unique to a specific message type
+are defined with that message type.
+</p>
+
+			
+				<pre>const (
+    <span id="CT_ROUTINGCOST">CT_ROUTINGCOST</span> = &#34;routingcost&#34;
+    <span id="CT_HOPCOUNT">CT_HOPCOUNT</span>    = &#34;hopcount&#34;
+    <span id="CT_NUMERICAL">CT_NUMERICAL</span>   = &#34;numerical&#34;
+    <span id="CT_ORDINAL">CT_ORDINAL</span>     = &#34;ordinal&#34;
+)</pre>
+				<p>
+Standard cost metrics and cost modes.
+</p>
+
+			
+				<pre>const (
+    <span id="FN_COST_TYPES">FN_COST_TYPES</span>               = &#34;cost-types&#34;
+    <span id="FN_DEFAULT_ALTO_NETWORK_MAP">FN_DEFAULT_ALTO_NETWORK_MAP</span> = &#34;default-alto-network-map&#34;
+    <span id="FN_DESCRIPTION">FN_DESCRIPTION</span>              = &#34;description&#34;
+    <span id="FN_RESOURCES">FN_RESOURCES</span>                = &#34;resources&#34;
+    <span id="FN_URI">FN_URI</span>                      = &#34;uri&#34;
+    <span id="FN_MEDIA_TYPE">FN_MEDIA_TYPE</span>               = &#34;media-type&#34;
+    <span id="FN_ACCEPTS">FN_ACCEPTS</span>                  = &#34;accepts&#34;
+    <span id="FN_USES">FN_USES</span>                     = &#34;uses&#34;
+    <span id="FN_CAPABILITIES">FN_CAPABILITIES</span>             = &#34;capabilities&#34;
+    <span id="FN_COST_CONSTRAINTS">FN_COST_CONSTRAINTS</span>         = &#34;cost-constraints&#34;
+    <span id="FN_COST_TYPE_NAMES">FN_COST_TYPE_NAMES</span>          = &#34;cost-type-names&#34;
+    <span id="FN_PROP_TYPES">FN_PROP_TYPES</span>               = &#34;prop-types&#34;
+)</pre>
+				<p>
+Field names for IRD messages.
+</p>
+
+			
+				<pre>const (
+    <span id="FN_ERROR_CODE">FN_ERROR_CODE</span>         = &#34;code&#34;
+    <span id="FN_ERROR_SYNTAX_ERROR">FN_ERROR_SYNTAX_ERROR</span> = &#34;syntax-error&#34;
+    <span id="FN_ERROR_FIELD">FN_ERROR_FIELD</span>        = &#34;field&#34;
+    <span id="FN_ERROR_VALUE">FN_ERROR_VALUE</span>        = &#34;value&#34;
+)</pre>
+				<p>
+JSON field names for Error message fields.
+All are in the meta section.
+</p>
+
+			
+				<pre>const (
+    <span id="ERROR_CODE_SYNTAX">ERROR_CODE_SYNTAX</span>              = &#34;E_SYNTAX&#34;
+    <span id="ERROR_CODE_MISSING_FIELD">ERROR_CODE_MISSING_FIELD</span>       = &#34;E_MISSING_FIELD&#34;
+    <span id="ERROR_CODE_INVALID_FIELD_TYPE">ERROR_CODE_INVALID_FIELD_TYPE</span>  = &#34;E_INVALID_FIELD_TYPE&#34;
+    <span id="ERROR_CODE_INVALID_FIELD_VALUE">ERROR_CODE_INVALID_FIELD_VALUE</span> = &#34;E_INVALID_FIELD_VALUE&#34;
+)</pre>
+				<p>
+ALTO Error Codes.
+</p>
+
+			
+				<pre>const (
+    <span id="IPV4_ADDR_TYPE">IPV4_ADDR_TYPE</span>   = &#34;ipv4&#34;
+    <span id="IPV4_ADDR_PREFIX">IPV4_ADDR_PREFIX</span> = <a href="#IPV4_ADDR_TYPE">IPV4_ADDR_TYPE</a> + &#34;:&#34;
+    <span id="IPV6_ADDR_TYPE">IPV6_ADDR_TYPE</span>   = &#34;ipv6&#34;
+    <span id="IPV6_ADDR_PREFIX">IPV6_ADDR_PREFIX</span> = <a href="#IPV6_ADDR_TYPE">IPV6_ADDR_TYPE</a> + &#34;:&#34;
+)</pre>
+				<p>
+AddrType prefixes.
+</p>
+
+			
+				<pre>const (
+    <span id="FN_COST_MAP">FN_COST_MAP</span> = &#34;cost-map&#34;
+)</pre>
+				<p>
+JSON field names for CostType message fields.
+</p>
+
+			
+				<pre>const (
+    <span id="FN_ENDPOINT_COST_MAP">FN_ENDPOINT_COST_MAP</span> = &#34;endpoint-cost-map&#34;
+)</pre>
+				<p>
+JSON field names for EndpointCost message fields.
+</p>
+
+			
+				<pre>const (
+    <span id="FN_ENDPOINT_PROPERTIES">FN_ENDPOINT_PROPERTIES</span> = &#34;endpoint-properties&#34;
+)</pre>
+				<p>
+JSON field names for EndpointProp message fields.
+</p>
+
+			
+				<pre>const (
+    <span id="FN_NETWORK_MAP">FN_NETWORK_MAP</span> = &#34;network-map&#34;
+)</pre>
+				<p>
+JSON field names for NetworkMap message fields.
+</p>
+
+			
+		
+		
+		
+			
+			
+			<h2 id="AddrTypeLen">func <a href="/src/target/typed-addrs.go?s=372:418#L11">AddrTypeLen</a></h2>
+			<pre>func AddrTypeLen(addrtype <a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+AddrTypeLen() returns the length of an address type,
+or an error if the address type is invalid.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CheckTypedAddr">func <a href="/src/target/typed-addrs.go?s=863:925#L26">CheckTypedAddr</a></h2>
+			<pre>func CheckTypedAddr(inAddr <a href="/pkg/builtin/#string">string</a>) (outAddr <a href="/pkg/builtin/#string">string</a>, err <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+CheckTypedAddr() validates an endpoint address with a type prefix.
+If ok, the method returns the cannonical string version of inAddr,
+and nil for err. If inAddr is not valid, the method returns an error,
+and returns &#34;&#34; outAddr.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CheckTypedAddrs">func <a href="/src/target/typed-addrs.go?s=1794:1866#L54">CheckTypedAddrs</a></h2>
+			<pre>func CheckTypedAddrs(inAddrs []<a href="/pkg/builtin/#string">string</a>) (outAddrs []<a href="/pkg/builtin/#string">string</a>, errs []<a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+CheckTypedAddrs() validates &amp; normalizes an array of typed addresses.
+It returns an array with the valid addresses,
+and an array with the errors found, if any.
+The returned &#34;errs&#34; slice may be nil or a 0-length.
+The returned &#34;outAddrs&#34; slice is never nil.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CmpAltoMsgs">func <a href="/src/target/common.go?s=7247:7295#L246">CmpAltoMsgs</a></h2>
+			<pre>func CmpAltoMsgs(m1, m2 <a href="#AltoMsg">AltoMsg</a>) (errMsg <a href="/pkg/builtin/#string">string</a>)</pre>
+			<p>
+CmpAltoMsgs() compares two ALTO messages by comparing their JSON strings.
+Return &#34;&#34; if the messages are the same.
+If not, return a description of the difference.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CostTypeListContains">func <a href="/src/target/common.go?s=2164:2224#L73">CostTypeListContains</a></h2>
+			<pre>func CostTypeListContains(list []<a href="#CostType">CostType</a>, ct <a href="#CostType">CostType</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+			<p>
+CostTypeListContains(list,ct) returns true iff ct equals a CostType in list.
+Return false if list is nil.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CostTypeListContainsAll">func <a href="/src/target/common.go?s=2538:2604#L88">CostTypeListContainsAll</a></h2>
+			<pre>func CostTypeListContainsAll(list []<a href="#CostType">CostType</a>, cts []<a href="#CostType">CostType</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+			<p>
+CostTypeListContainsAll(list,cts) returns true iff every
+CostType in cts equals a CostType in list.
+If cts is nil or 0-length, always return true.
+Otherwise, return false if list is nil.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CostTypeListEqual">func <a href="/src/target/common.go?s=2848:2892#L99">CostTypeListEqual</a></h2>
+			<pre>func CostTypeListEqual(a, b []<a href="#CostType">CostType</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+			<p>
+CostTypeListEqual() returns true iff two slices have the same CostTypes
+in the same order. An empty slice is equal to a nil slice.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CostTypeSetEqual">func <a href="/src/target/common.go?s=3131:3174#L113">CostTypeSetEqual</a></h2>
+			<pre>func CostTypeSetEqual(a, b []<a href="#CostType">CostType</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+			<p>
+CostTypeSetEqual() returns true iff two slices have the same set
+of CostTypes, possibly in different order.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="FromJsonBytes">func <a href="/src/target/common.go?s=5941:5990#L206">FromJsonBytes</a></h2>
+			<pre>func FromJsonBytes(msg <a href="#AltoMsg">AltoMsg</a>, b []<a href="/pkg/builtin/#byte">byte</a>) []<a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+FromJsonBytes() decodes a JSON message and copies the data
+into this structure.
+It returns an array with the errors encountered.
+If okay, it returns 0-length array.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ParseTypedAddr">func <a href="/src/target/typed-addrs.go?s=2415:2463#L75">ParseTypedAddr</a></h2>
+			<pre>func ParseTypedAddr(addr <a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/net/">net</a>.<a href="/pkg/net/#IP">IP</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ParseTypedAddr() returns the net.IP for a possibly typed address.
+The function returns an error of addr is not valid,
+or if the address part does not match the type prefix.
+If addr does not have a type prefix, the function imputes the type.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="PrintAltoMsg">func <a href="/src/target/common.go?s=6810:6853#L234">PrintAltoMsg</a></h2>
+			<pre>func PrintAltoMsg(msg <a href="#AltoMsg">AltoMsg</a>, w <a href="/pkg/io/">io</a>.<a href="/pkg/io/#Writer">Writer</a>)</pre>
+			<p>
+PrintAltoMsg() prints the JSON for an Alto message
+in a consistent, repeatable fashion.
+It returns an error if ToJsonBytes() cannot create the JSON
+for the messaage, or if the created JSON is not parsable.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadJson">func <a href="/src/target/common.go?s=6363:6410#L220">ReadJson</a></h2>
+			<pre>func ReadJson(msg <a href="#AltoMsg">AltoMsg</a>, r <a href="/pkg/io/">io</a>.<a href="/pkg/io/#Reader">Reader</a>) []<a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+ReadJson() reads and decodes a JSON input stream
+and copies the data into this structure.
+It returns an array with the errors encountered.
+If okay, it returns 0-length array.
+Caveat: The method MAY read past the end of the JSON data.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TestCheckTypedAddr">func <a href="/src/target/test-typed-addrs.go?s=57:97#L1">TestCheckTypedAddr</a></h2>
+			<pre>func TestCheckTypedAddr(test *<a href="/pkg/testing/">testing</a>.<a href="/pkg/testing/#T">T</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="TestParseTypedAddr">func <a href="/src/target/test-typed-addrs.go?s=1881:1921#L71">TestParseTypedAddr</a></h2>
+			<pre>func TestParseTypedAddr(test *<a href="/pkg/testing/">testing</a>.<a href="/pkg/testing/#T">T</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="ToJsonBytes">func <a href="/src/target/common.go?s=5381:5426#L188">ToJsonBytes</a></h2>
+			<pre>func ToJsonBytes(msg <a href="#AltoMsg">AltoMsg</a>) ([]<a href="/pkg/builtin/#byte">byte</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ToJsonBytes() encodes the data in this structure into a JSON message.
+If successful it returns a []byte with the JSON data;
+if not, it returns a non-nil errror.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="WriteJson">func <a href="/src/target/common.go?s=5638:5684#L196">WriteJson</a></h2>
+			<pre>func WriteJson(msg <a href="#AltoMsg">AltoMsg</a>, w <a href="/pkg/io/">io</a>.<a href="/pkg/io/#Writer">Writer</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+WriteJson() writes the data in this structure as a JSON message.
+If successful it returns nil; if not, it returns an errror.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="AltoConn">type <a href="/src/target/altoconn.go?s=657:1377#L20">AltoConn</a></h2>
+			<pre>type AltoConn struct {
+    <span class="comment">// HaveResources is true iff ResourceSet is valid.</span>
+    HaveResources <a href="/pkg/builtin/#bool">bool</a>
+
+    <span class="comment">// ResourceSet has the server&#39;s resources, and is created</span>
+    <span class="comment">// by LoadRootDir().</span>
+    ResourceSet *<a href="#ResourceSet">ResourceSet</a>
+
+    <span class="comment">// NetworkMapId is the ID of the network map which</span>
+    <span class="comment">// will be used for NetworkMap and CostMap requests.</span>
+    <span class="comment">// LoadRootDir sets it to the default network map.</span>
+    NetworkMapId <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// ErrHandler() is called whenever an error occurs.</span>
+    <span class="comment">// The method may log the error.</span>
+    ErrHandler func(errs []<a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">// Proxy is the url for the proxy, or nil.</span>
+    Proxy *<a href="/pkg/net/url/">url</a>.<a href="/pkg/net/url/#URL">URL</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+AltoConn represents a connection to an ALTO server.
+To use, call LoadRootDir(uri) with the uri of the server&#39;s IRD.
+This reads that IRD, and any secondary IRDs, and creates
+a ResourceSet with all the server&#39;s resources.
+After that, the methods NetworkMap(), CostMap(), etc,
+send the appropriate requests to the server and return the response.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewAltoConn">func <a href="/src/target/altoconn.go?s=2808:2836#L93">NewAltoConn</a></h3>
+				<pre>func NewAltoConn() *<a href="#AltoConn">AltoConn</a></pre>
+				<p>
+NewAltoConn() creates a new connection.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="AltoConn.CostMap">func (*AltoConn) <a href="/src/target/altoconn.go?s=7271:7343#L233">CostMap</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) CostMap(costType <a href="#CostType">CostType</a>) (*<a href="#CostMap">CostMap</a>, *<a href="#ServerResp">ServerResp</a>)</pre>
+				<p>
+CostMap() reads and returns the full Cost Map for costType and network map NetworkMapId.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.EndpointCost">func (*AltoConn) <a href="/src/target/altoconn.go?s=9167:9290#L289">EndpointCost</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) EndpointCost(costType <a href="#CostType">CostType</a>,
+    srcs, dsts, constraints []<a href="/pkg/builtin/#string">string</a>) (*<a href="#EndpointCost">EndpointCost</a>, *<a href="#ServerResp">ServerResp</a>)</pre>
+				<p>
+EndpointCost() returns an EndpointCost
+for the indicated cost type, source and destination addresses, and constraints.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.EndpointProp">func (*AltoConn) <a href="/src/target/altoconn.go?s=10120:10210#L317">EndpointProp</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) EndpointProp(addrs, propTypes []<a href="/pkg/builtin/#string">string</a>) (*<a href="#EndpointProp">EndpointProp</a>, *<a href="#ServerResp">ServerResp</a>)</pre>
+				<p>
+EndpointProp() returns an EndpointProp
+for the indicated addresses and properties.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.FilteredCostMap">func (*AltoConn) <a href="/src/target/altoconn.go?s=8122:8247#L259">FilteredCostMap</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) FilteredCostMap(costType <a href="#CostType">CostType</a>,
+    srcs, dsts, constraints []<a href="/pkg/builtin/#string">string</a>) (*<a href="#CostMap">CostMap</a>, *<a href="#ServerResp">ServerResp</a>)</pre>
+				<p>
+FilteredCostMap() returns a filtered CostMap
+for the indicated cost type, source and destination pids, and constraints.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.FilteredNetworkMap">func (*AltoConn) <a href="/src/target/altoconn.go?s=6384:6497#L207">FilteredNetworkMap</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) FilteredNetworkMap(addrTypes []<a href="/pkg/builtin/#string">string</a>,
+    pids []<a href="/pkg/builtin/#string">string</a>) (*<a href="#NetworkMap">NetworkMap</a>, *<a href="#ServerResp">ServerResp</a>)</pre>
+				<p>
+FilteredNetworkMap() returns a filtered Network Map
+for the indicated PIDs and address types.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.GetIRD">func (*AltoConn) <a href="/src/target/altoconn.go?s=5142:5208#L166">GetIRD</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) GetIRD(uri <a href="/pkg/builtin/#string">string</a>) (*<a href="#Directory">Directory</a>, *<a href="#ServerResp">ServerResp</a>)</pre>
+				<p>
+GetIRD() reads and returns an IRD.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.LoadRootDir">func (*AltoConn) <a href="/src/target/altoconn.go?s=3100:3170#L103">LoadRootDir</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) LoadRootDir(uri <a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/time/">time</a>.<a href="/pkg/time/#Duration">Duration</a>, []<a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+LoadRootDir() reads a root IRD, and all secondary IRDs,
+and saves the ALTO server&#39;s resources in ResourceSet,
+replacing whatever was there before.
+Subsequent commands will use that ALTO server.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.NetworkMap">func (*AltoConn) <a href="/src/target/altoconn.go?s=5619:5680#L182">NetworkMap</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) NetworkMap() (*<a href="#NetworkMap">NetworkMap</a>, *<a href="#ServerResp">ServerResp</a>)</pre>
+				<p>
+NetworkMap() reads and returns the full Network Map with id NetworkMapId.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.SendReq">func (*AltoConn) <a href="/src/target/altoconn.go?s=11149:11250#L346">SendReq</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) SendReq(uri <a href="/pkg/builtin/#string">string</a>,
+    accept []<a href="/pkg/builtin/#string">string</a>,
+    req <a href="#AltoMsg">AltoMsg</a>) *<a href="#ServerResp">ServerResp</a></pre>
+				<p>
+SendReq() sends a request to &#34;uri&#34; and returns the response.
+&#34;accept&#34; has the media types the client expects;
+the function adds MT_ERROR if not in the list.
+If &#34;req&#34; is nil, use GET. If not, use POST
+and send &#34;req&#34; as the request message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.SetProxy">func (*AltoConn) <a href="/src/target/altoconn.go?s=14446:14494#L454">SetProxy</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) SetProxy(uri <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+SetProxy() sets the proxy. Use &#34;&#34; to remove the proxy.
+The function returns nil if the proxy has been updated,
+or nil if uri is not a well-formed URL.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.SetSkipVerify">func (*AltoConn) <a href="/src/target/altoconn.go?s=15029:15081#L477">SetSkipVerify</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) SetSkipVerify(skipVerify <a href="/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+SetSkipVerify() sets whether we verify server certificates
+for TLS connections. If skipVerify is true, do not verify.
+This should only be used for testing.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.SetTimeout">func (*AltoConn) <a href="/src/target/altoconn.go?s=14011:14066#L440">SetTimeout</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) SetTimeout(timeout <a href="/pkg/time/">time</a>.<a href="/pkg/time/#Duration">Duration</a>)</pre>
+				<p>
+SetTimeout() sets the timeout for a request. 0 means no timeout.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.SkipVerify">func (*AltoConn) <a href="/src/target/altoconn.go?s=14743:14782#L469">SkipVerify</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) SkipVerify() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+SkipVerify() returns true iff we do not verify server certificates
+for TLS connections.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AltoConn.Timeout">func (*AltoConn) <a href="/src/target/altoconn.go?s=14189:14234#L446">Timeout</a></h3>
+				<pre>func (this *<a href="#AltoConn">AltoConn</a>) Timeout() <a href="/pkg/time/">time</a>.<a href="/pkg/time/#Duration">Duration</a></pre>
+				<p>
+Timeout() returns the timeout for a request. 0 means no timeout.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="AltoMsg">type <a href="/src/target/common.go?s=3621:4034#L132">AltoMsg</a></h2>
+			<pre>type AltoMsg interface {
+
+    <span class="comment">// MediaType() returns the media-type for this message.</span>
+    MediaType() <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// ToJsonMap() returns a map with the JSON fields</span>
+    <span class="comment">// for the data in this structure.</span>
+    ToJsonMap() <a href="#JsonMap">JsonMap</a>
+
+    <span class="comment">// FromJsonMap() copies the JSON fields in a map into this structure.</span>
+    <span class="comment">// It returns an array with the errors encountered.</span>
+    <span class="comment">// If okay, it returns 0-length array.</span>
+    FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) []<a href="/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+AltoMsg has common functions for all ALTO message types.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewAltoMsg">func <a href="/src/target/common.go?s=4368:4449#L152">NewAltoMsg</a></h3>
+				<pre>func NewAltoMsg(mediaType <a href="/pkg/builtin/#string">string</a>, r <a href="/pkg/io/">io</a>.<a href="/pkg/io/#Reader">Reader</a>, contentLen <a href="/pkg/builtin/#int">int</a>) (<a href="#AltoMsg">AltoMsg</a>, []<a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewAltoMsg() reads &amp; parses JSON from a reader and an AltoMsgwith the content.
+The function returns an array with any errors encountered;
+if there are no errors, it returns a 0-length array
+mediaType defines the message type, and must be one of the MT_* codes.
+If contentLen &gt; 0, read at most that many bytes from r.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="CIDRError">type <a href="/src/target/error_types.go?s=101:151#L1">CIDRError</a></h2>
+			<pre>type CIDRError struct {
+    CIDR <a href="/pkg/builtin/#string">string</a>
+    Err  <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+CIDRError means a CIDR is invalid.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="CIDRError.Error">func (CIDRError) <a href="/src/target/error_types.go?s=179:215#L4">Error</a></h3>
+				<pre>func (this <a href="#CIDRError">CIDRError</a>) Error() <a href="/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CIDRInfo">type <a href="/src/target/networkmap.go?s=920:1112#L28">CIDRInfo</a></h2>
+			<pre>type CIDRInfo struct {
+    <span class="comment">// Pid is the PID for this CIDR.</span>
+    Pid <a href="/pkg/builtin/#string">string</a>
+    <span class="comment">// Ipnet is the address and mask for the CIDR.</span>
+    Ipnet <a href="/pkg/net/">net</a>.<a href="/pkg/net/#IPNet">IPNet</a>
+    <span class="comment">// MaskLen is the length of the CIDR mask.</span>
+    MaskLen <a href="/pkg/builtin/#int">int</a>
+}</pre>
+			<p>
+CIDRInfo describes a CIDR that has been assigned to a PID in a network map.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Cost">type <a href="/src/target/common.go?s=3402:3419#L124">Cost</a></h2>
+			<pre>type Cost <a href="/pkg/builtin/#float32">float32</a></pre>
+			<p>
+Cost is the type for ALTO costs.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="CostMap">type <a href="/src/target/costmap.go?s=216:309#L4">CostMap</a></h2>
+			<pre>type CostMap struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+CostMap represents an ALTO Cost Map response.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCostMap">func <a href="/src/target/costmap.go?s=425:451#L14">NewCostMap</a></h3>
+				<pre>func NewCostMap() *<a href="#CostMap">CostMap</a></pre>
+				<p>
+NewCostMap() creates an empty cost map.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="CostMap.AddDepVTag">func (*CostMap) <a href="/src/target/costmap.go?s=1607:1649#L59">AddDepVTag</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) AddDepVTag(vtag <a href="#VTag">VTag</a>)</pre>
+				<p>
+AddDepVTag() adds a dependent VTag to this cost map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.AllDsts">func (*CostMap) <a href="/src/target/costmap.go?s=3805:3844#L135">AllDsts</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) AllDsts() []<a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+AllDsts() returns all destination PIDs used in a cost map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.AllSrcs">func (*CostMap) <a href="/src/target/costmap.go?s=3577:3616#L126">AllSrcs</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) AllSrcs() []<a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+AllSrcs() returns all source PIDs used in a cost map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.CostIter">func (*CostMap) <a href="/src/target/costmap.go?s=2824:2899#L101">CostIter</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) CostIter(f func(src, dst <a href="/pkg/builtin/#string">string</a>, cost <a href="#Cost">Cost</a>) <a href="/pkg/builtin/#bool">bool</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+CostIter() calls f(src,dst,cost) on all cost points in this cost map.
+If f() returns false, CostIter() stops and returns false.
+Otherwise CostIter() returns true after calling f() on all cost points.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.CostType">func (*CostMap) <a href="/src/target/costmap.go?s=777:817#L28">CostType</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) CostType() <a href="#CostType">CostType</a></pre>
+				<p>
+CostType() returns the cost type for this cost map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.DepVTag">func (*CostMap) <a href="/src/target/costmap.go?s=1129:1164#L40">DepVTag</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) DepVTag() <a href="#VTag">VTag</a></pre>
+				<p>
+DepVTag() returns the VTag of the first resource
+upon which this cost map depends, or an empty VTag
+if there are no dependent resources.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.DepVTags">func (*CostMap) <a href="/src/target/costmap.go?s=1418:1456#L51">DepVTags</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) DepVTags() []<a href="#VTag">VTag</a></pre>
+				<p>
+DepVTags() returns a slice with the VTags for all resources
+upon which this cost map depends.
+If none, it returns an empty array.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.FromJsonMap">func (*CostMap) <a href="/src/target/costmap.go?s=4823:4875#L168">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) []<a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+This function uses a pointer to the map data,
+especially the cost matrix, rather than making a deep copy.
+Hence you must not change the map after calling this function.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.GetCost">func (*CostMap) <a href="/src/target/costmap.go?s=2414:2472#L87">GetCost</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) GetCost(src, dst <a href="/pkg/builtin/#string">string</a>) (<a href="#Cost">Cost</a>, <a href="/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+GetCost() returns the cost from a source to a destination pid.
+Return false if the cost map does not have that cost.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.GetCosts">func (*CostMap) <a href="/src/target/costmap.go?s=2208:2266#L81">GetCosts</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) GetCosts() map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Cost">Cost</a></pre>
+				<p>
+GetCosts returns a map from source pids to destination pids to costs.
+Callers SHOULD NOT modify the retured map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.MediaType">func (*CostMap) <a href="/src/target/costmap.go?s=657:696#L23">MediaType</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.SetCost">func (*CostMap) <a href="/src/target/costmap.go?s=1828:1884#L67">SetCost</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) SetCost(src, dst <a href="/pkg/builtin/#string">string</a>, cost <a href="#Cost">Cost</a>)</pre>
+				<p>
+SetCost() sets the cost from a source to destination pid.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.SetCostType">func (*CostMap) <a href="/src/target/costmap.go?s=900:951#L33">SetCostType</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) SetCostType(costType <a href="#CostType">CostType</a>)</pre>
+				<p>
+SetCostType() sets the cost type for this cost map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.SrcIter">func (*CostMap) <a href="/src/target/costmap.go?s=3335:3416#L116">SrcIter</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) SrcIter(f func(src <a href="/pkg/builtin/#string">string</a>, costs map[<a href="/pkg/builtin/#string">string</a>]<a href="#Cost">Cost</a>) <a href="/pkg/builtin/#bool">bool</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+SrcIter() calls f(src,map[string]Cost) for all source pids in this cost map.
+The map argument gives the costs from src to each destination pid.
+If f() returns false, SrcIter() stops and returns false.
+Otherwise SrcIter() returns true after calling f() on all source pids.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMap.ToJsonMap">func (*CostMap) <a href="/src/target/costmap.go?s=4377:4417#L154">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#CostMap">CostMap</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+The created map has a pointer to the data in this structure,
+especially the cost matrix, rather than a deep copy.
+Hence you must not change the cost data after calling this function.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CostMapFilter">type <a href="/src/target/costmapfilter.go?s=173:569#L1">CostMapFilter</a></h2>
+			<pre>type CostMapFilter struct {
+    <span class="comment">// CostType is the cost type requested.</span>
+    CostType <a href="#CostType">CostType</a>
+
+    <span class="comment">// Srcs has the requested source PIDs.</span>
+    <span class="comment">// nil or 0-length means use all PIDs.</span>
+    Srcs []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Dsts has the requested destination PIDs.</span>
+    <span class="comment">// nil or 0-length means use all PIDs.</span>
+    Dsts []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Constraints is a list of constraints.</span>
+    <span class="comment">// nil or 0-length means no constraints.</span>
+    Constraints []<a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+CoatMapFilter represents an ALTO cost map filter request.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCostMapFilter">func <a href="/src/target/costmapfilter.go?s=705:743#L21">NewCostMapFilter</a></h3>
+				<pre>func NewCostMapFilter() *<a href="#CostMapFilter">CostMapFilter</a></pre>
+				<p>
+NewCostMapFilter creates a new CostMapFilter message.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="CostMapFilter.FromJsonMap">func (*CostMapFilter) <a href="/src/target/costmapfilter.go?s=1692:1759#L56">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#CostMapFilter">CostMapFilter</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) (errors []<a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMapFilter.MediaType">func (*CostMapFilter) <a href="/src/target/costmapfilter.go?s=874:919#L27">MediaType</a></h3>
+				<pre>func (this *<a href="#CostMapFilter">CostMapFilter</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CostMapFilter.ToJsonMap">func (*CostMapFilter) <a href="/src/target/costmapfilter.go?s=1035:1081#L33">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#CostMapFilter">CostMapFilter</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CostType">type <a href="/src/target/common.go?s=1362:1414#L42">CostType</a></h2>
+			<pre>type CostType struct {
+    Metric <a href="/pkg/builtin/#string">string</a>
+    Mode   <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+CostType is an ALTO cost type.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="CostType.String">func (CostType) <a href="/src/target/common.go?s=1768:1804#L62">String</a></h3>
+				<pre>func (this <a href="#CostType">CostType</a>) String() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+String() returns a string representation of a CostType.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CostTypeDescription">type <a href="/src/target/common.go?s=1480:1545#L48">CostTypeDescription</a></h2>
+			<pre>type CostTypeDescription struct {
+    <a href="#CostType">CostType</a>
+    Description <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+CostTypeDescription is an ALTO cost type plus a description.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="CostTypeDescription.String">func (CostTypeDescription) <a href="/src/target/common.go?s=1924:1971#L67">String</a></h3>
+				<pre>func (this <a href="#CostTypeDescription">CostTypeDescription</a>) String() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+String() returns a string representation of a CostTypeDescr.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="DirResource">type <a href="/src/target/directory.go?s=1227:1977#L38">DirResource</a></h2>
+			<pre>type DirResource struct {
+    <span class="comment">// Id is the resource&#39;s unique ID.</span>
+    Id <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// URI is the resource&#39;s URI, as a string.</span>
+    URI <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// MediaType is the response type for this resource.</span>
+    MediaType <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Accepts is the request type for this resource.</span>
+    <span class="comment">// If &#34;&#34;, this is a get-mode resource.</span>
+    Accepts <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Uses has the ID&#39;s of the resources upon which this resource depends.</span>
+    <span class="comment">// May be nil.</span>
+    Uses []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// CostTypeNames has the names of the cost types this resource can return.</span>
+    <span class="comment">// May be nil.</span>
+    CostTypeNames []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// CostConstraints is true iff this resource accepts cost constraint tests.</span>
+    CostConstraints <a href="/pkg/builtin/#bool">bool</a>
+
+    <span class="comment">// PropTypes has the names of the properties this resource can return.</span>
+    <span class="comment">// May be nil.</span>
+    PropTypes []<a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+DirResource describes a resource in an IRD.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Directory">type <a href="/src/target/directory.go?s=770:1178#L23">Directory</a></h2>
+			<pre>type Directory struct {
+    <span class="comment">// CostTypes gives the cost types defined in this message.</span>
+    <span class="comment">// The keys are the cost type names.</span>
+    CostTypes map[<a href="/pkg/builtin/#string">string</a>]<a href="#CostTypeDescription">CostTypeDescription</a>
+
+    <span class="comment">// DefNetworkMapId is the resource id of the default network map.</span>
+    <span class="comment">// May be &#34;&#34;.</span>
+    DefNetworkMapId <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Resources gives information for the resources in this IRD.</span>
+    <span class="comment">// The keys are the resource IDs.</span>
+    Resources map[<a href="/pkg/builtin/#string">string</a>]*<a href="#DirResource">DirResource</a>
+}</pre>
+			<p>
+Directory represents an ALTO Information Resource Directory (IRD) response.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewDirectory">func <a href="/src/target/directory.go?s=2025:2055#L69">NewDirectory</a></h3>
+				<pre>func NewDirectory() *<a href="#Directory">Directory</a></pre>
+				<p>
+NewDirectory() creates an empty directory.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Directory.AddResource">func (*Directory) <a href="/src/target/directory.go?s=2402:2566#L82">AddResource</a></h3>
+				<pre>func (this *<a href="#Directory">Directory</a>) AddResource(id, uri, mediaType, accepts <a href="/pkg/builtin/#string">string</a>,
+    uses, costTypeNames, propTypes []<a href="/pkg/builtin/#string">string</a>,
+    constraints <a href="/pkg/builtin/#bool">bool</a>) *<a href="#DirResource">DirResource</a></pre>
+				<p>
+AddResource() adds a resource to this Directory, and returns the DirResource.
+The parameters are the fields in the new resource.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Directory.FromJsonMap">func (*Directory) <a href="/src/target/directory.go?s=4715:4778#L165">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#Directory">Directory</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) (errors []<a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+This function uses a pointer to the map data,
+rather than making a deep copy.
+Hence you must not change the data after calling this function.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Directory.MediaType">func (*Directory) <a href="/src/target/directory.go?s=2878:2919#L100">MediaType</a></h3>
+				<pre>func (this *<a href="#Directory">Directory</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Directory.ToJsonMap">func (*Directory) <a href="/src/target/directory.go?s=3188:3230#L109">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#Directory">Directory</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+The created map has a pointer to the data in this structure,
+rather than a deep copy.
+Hence you must not change the data after calling this function.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EndpointCost">type <a href="/src/target/endpointcost.go?s=281:379#L5">EndpointCost</a></h2>
+			<pre>type EndpointCost struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+EndpointCost represents an ALTO EndpointCost response.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEndpointCost">func <a href="/src/target/endpointcost.go?s=510:546#L15">NewEndpointCost</a></h3>
+				<pre>func NewEndpointCost() *<a href="#EndpointCost">EndpointCost</a></pre>
+				<p>
+NewEndpointCost() creates an empty cost map.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="EndpointCost.CostIter">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=3488:3568#L115">CostIter</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) CostIter(f func(src, dst <a href="/pkg/builtin/#string">string</a>, cost <a href="#Cost">Cost</a>) <a href="/pkg/builtin/#bool">bool</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+CostIter() calls f(src,dst,cost) on all cost points in this cost map.
+If f() returns false, CostIter() stops and returns false.
+Otherwise CostIter() returns true after calling f() on all cost points.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.CostType">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=876:921#L29">CostType</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) CostType() <a href="#CostType">CostType</a></pre>
+				<p>
+CostType() returns the cost type for this cost map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.FromJsonMap">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=4875:4932#L155">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) []<a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+This function uses a pointer to the map data,
+especially the cost matrix, rather than making a deep copy.
+Hence you must not change the map after calling this function.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.GetCost">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=3073:3136#L101">GetCost</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) GetCost(src, dst <a href="/pkg/builtin/#string">string</a>) (<a href="#Cost">Cost</a>, <a href="/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+GetCost() returns the cost from a source to a destination address.
+Return false if the cost map does not have that cost.
+Note: This matches on the addresses as strings.
+It does not recognize equivalent addresses with different string representations.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.GetCosts">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=2722:2785#L93">GetCosts</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) GetCosts() map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Cost">Cost</a></pre>
+				<p>
+GetCosts returns a map from source address to destination address to costs.
+Callers SHOULD NOT modify the retured map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.IsNormalized">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=2522:2567#L87">IsNormalized</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) IsNormalized() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+IsNormalized() returns true iff all endpoints have been checked and normalized.
+See Normalize().
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.MediaType">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=746:790#L24">MediaType</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.Normalize">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=1787:1832#L58">Normalize</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) Normalize() []<a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+Normalize() checks and normalizes all endpoint addresses.
+The function removes any invalid addresses from the cost map,
+and returns a list of the errors found.
+If all addresses are valid, the method returns nil or a 0-length slice.
+Normalize() returns immediately if the cost map has not changed
+since the previous call.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.SetCost">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=1157:1218#L39">SetCost</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) SetCost(src, dst <a href="/pkg/builtin/#string">string</a>, cost <a href="#Cost">Cost</a>)</pre>
+				<p>
+SetCost() sets the cost from a source to destination address.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.SetCostType">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=1004:1060#L34">SetCostType</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) SetCostType(costType <a href="#CostType">CostType</a>)</pre>
+				<p>
+SetCostType() sets the cost type for this cost map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.SrcIter">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=4013:4099#L130">SrcIter</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) SrcIter(f func(src <a href="/pkg/builtin/#string">string</a>, costs map[<a href="/pkg/builtin/#string">string</a>]<a href="#Cost">Cost</a>) <a href="/pkg/builtin/#bool">bool</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+SrcIter() calls f(src,map[string]Cost) for all source addresses in this cost map.
+The map argument gives the costs from src to each destination address.
+If f() returns false, SrcIter() stops and returns false.
+Otherwise SrcIter() returns true after calling f() on all source pids.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCost.ToJsonMap">func (*EndpointCost) <a href="/src/target/endpointcost.go?s=4478:4523#L144">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#EndpointCost">EndpointCost</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+The created map has a pointer to the data in this structure,
+especially the cost matrix, rather than a deep copy.
+Hence you must not change the cost data after calling this function.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EndpointCostParams">type <a href="/src/target/endpointcostparams.go?s=175:604#L1">EndpointCostParams</a></h2>
+			<pre>type EndpointCostParams struct {
+    <span class="comment">// CostType is the cost type requested.</span>
+    CostType <a href="#CostType">CostType</a>
+
+    <span class="comment">// Srcs has the requested source addresses.</span>
+    <span class="comment">// nil or 0-length means use the client&#39;s address.</span>
+    Srcs []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Dsts has the requested destination PIDs.</span>
+    <span class="comment">// nil or 0-length means use the client&#39;s address.</span>
+    Dsts []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Constraints is a list of constraints.</span>
+    <span class="comment">// nil or 0-length means no cnstraints.</span>
+    Constraints []<a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+EndpointCostParams represents an ALTO EndpointCost request.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEndpointCostParams">func <a href="/src/target/endpointcostparams.go?s=766:814#L21">NewEndpointCostParams</a></h3>
+				<pre>func NewEndpointCostParams() *<a href="#EndpointCostParams">EndpointCostParams</a></pre>
+				<p>
+NewEndpointCostParams creates a new EndpointCostParams message.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="EndpointCostParams.FromJsonMap">func (*EndpointCostParams) <a href="/src/target/endpointcostparams.go?s=1724:1796#L54">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#EndpointCostParams">EndpointCostParams</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) (errors []<a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCostParams.MediaType">func (*EndpointCostParams) <a href="/src/target/endpointcostparams.go?s=950:1000#L27">MediaType</a></h3>
+				<pre>func (this *<a href="#EndpointCostParams">EndpointCostParams</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointCostParams.ToJsonMap">func (*EndpointCostParams) <a href="/src/target/endpointcostparams.go?s=1121:1172#L33">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#EndpointCostParams">EndpointCostParams</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EndpointProp">type <a href="/src/target/endpointprop.go?s=285:366#L5">EndpointProp</a></h2>
+			<pre>type EndpointProp struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+EndpointProp represents an ALTO EndpointProp response.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEndpointProp">func <a href="/src/target/endpointprop.go?s=498:534#L14">NewEndpointProp</a></h3>
+				<pre>func NewEndpointProp() *<a href="#EndpointProp">EndpointProp</a></pre>
+				<p>
+NewEndpoints() creates an empty property map.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="EndpointProp.AddDepVTag">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=1101:1148#L37">AddDepVTag</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) AddDepVTag(vtag <a href="#VTag">VTag</a>)</pre>
+				<p>
+AddDepVTag() adds a dependent VTag to this property map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.AddrIter">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=3006:3100#L96">AddrIter</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) AddrIter(f func(addr <a href="/pkg/builtin/#string">string</a>, addrProps map[<a href="/pkg/builtin/#string">string</a>]<a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#bool">bool</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+AddrIter() calls f(addr,map[string]string) for all  addresses in this map.
+The map argument gives the values for all properties for that address.
+If f() returns false, AddrIter() stops and returns false.
+Otherwise AddrIter() returns true after calling f() on all source pids.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.DepVTags">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=903:946#L29">DepVTags</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) DepVTags() []<a href="#VTag">VTag</a></pre>
+				<p>
+DepVTags() returns a slice with the VTags for all resources
+upon which this property map depends.
+If none, it returns an empty array.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.FromJsonMap">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=3930:3987#L123">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) []<a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+This function uses a pointer to the map data,
+especially the property matrix, rather than making a deep copy.
+Hence you must not change the map after calling this function.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.GetProp">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=2058:2125#L67">GetProp</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) GetProp(addr, name <a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+GetProp() returns the value of a property for an address.
+Return false if that address does not have that property.
+Note: This matches on the addresses as strings.
+It does not recognize equivalent addresses with different string representations.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.GetProps">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=1710:1775#L59">GetProps</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) GetProps() map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+GetProps returns a map from endpoints to property names to values.
+Callers SHOULD NOT modify the retured map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.MediaType">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=685:729#L22">MediaType</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.PropIter">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=2480:2558#L81">PropIter</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) PropIter(f func(addr, name, value <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#bool">bool</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+PropIter() calls f(addr,name,value) on all properties in this map.
+If f() returns false, PropIter() stops and returns false.
+Otherwise PropIter() returns true after calling f() on all properties.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.SetProp">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=1318:1377#L45">SetProp</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) SetProp(addr, name, value <a href="/pkg/builtin/#string">string</a>)</pre>
+				<p>
+SetProp() sets a property value for an endpoint.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointProp.ToJsonMap">func (*EndpointProp) <a href="/src/target/endpointprop.go?s=3495:3540#L110">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#EndpointProp">EndpointProp</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+The created map has a pointer to the data in this structure,
+especially the property matrix, rather than a deep copy.
+Hence you must not change the property data after calling this function.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="EndpointPropParams">type <a href="/src/target/endpointpropparams.go?s=175:398#L1">EndpointPropParams</a></h2>
+			<pre>type EndpointPropParams struct {
+    <span class="comment">// Properties has the request property names.</span>
+    <span class="comment">// May be nil or 0-length.</span>
+    Properties []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Endpoints has the requested addresses.</span>
+    <span class="comment">// May be nil or 0-length.</span>
+    Endpoints []<a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+EndpointPropParams represents an ALTO EndpointProp request.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEndpointPropParams">func <a href="/src/target/endpointpropparams.go?s=560:608#L14">NewEndpointPropParams</a></h3>
+				<pre>func NewEndpointPropParams() *<a href="#EndpointPropParams">EndpointPropParams</a></pre>
+				<p>
+NewEndpointPropParams creates a new EndpointPropParams message.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="EndpointPropParams.FromJsonMap">func (*EndpointPropParams) <a href="/src/target/endpointpropparams.go?s=1262:1334#L38">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#EndpointPropParams">EndpointPropParams</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) (errors []<a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointPropParams.MediaType">func (*EndpointPropParams) <a href="/src/target/endpointpropparams.go?s=744:794#L20">MediaType</a></h3>
+				<pre>func (this *<a href="#EndpointPropParams">EndpointPropParams</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="EndpointPropParams.ToJsonMap">func (*EndpointPropParams) <a href="/src/target/endpointpropparams.go?s=915:966#L26">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#EndpointPropParams">EndpointPropParams</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ErrorResp">type <a href="/src/target/error.go?s=591:922#L17">ErrorResp</a></h2>
+			<pre>type ErrorResp struct {
+    <span class="comment">// Code is the error code. See ERROR_CODE_*.</span>
+    Code <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// SyntaxError describes the json syntax error, for ERROR_CODE_SYNTAX.</span>
+    SyntaxError <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Field is the json pathname of the offending field, or &#34;&#34;.</span>
+    Field <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Value is the value of the offending json field, or &#34;&#34;.</span>
+    Value <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+ErrorResp represents an ALTO error response.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewErrorResp">func <a href="/src/target/error.go?s=1046:1087#L35">NewErrorResp</a></h3>
+				<pre>func NewErrorResp(code <a href="/pkg/builtin/#string">string</a>) *<a href="#ErrorResp">ErrorResp</a></pre>
+				<p>
+NewErrorResp creates a new ErrorResp message.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ErrorResp.FromJsonMap">func (*ErrorResp) <a href="/src/target/error.go?s=1825:1888#L66">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#ErrorResp">ErrorResp</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) (errors []<a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ErrorResp.MediaType">func (*ErrorResp) <a href="/src/target/error.go?s=1230:1271#L41">MediaType</a></h3>
+				<pre>func (this *<a href="#ErrorResp">ErrorResp</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ErrorResp.ToJsonMap">func (*ErrorResp) <a href="/src/target/error.go?s=1377:1419#L47">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#ErrorResp">ErrorResp</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="JSONTypeError">type <a href="/src/target/error_types.go?s=333:387#L9">JSONTypeError</a></h2>
+			<pre>type JSONTypeError struct {
+    Path <a href="/pkg/builtin/#string">string</a>
+    Err  <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+JSONTypeError means a JSON field has the wrong type.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="JSONTypeError.Error">func (JSONTypeError) <a href="/src/target/error_types.go?s=419:459#L15">Error</a></h3>
+				<pre>func (this <a href="#JSONTypeError">JSONTypeError</a>) Error() <a href="/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="JsonMap">type <a href="/src/target/common.go?s=3524:3559#L129">JsonMap</a></h2>
+			<pre>type JsonMap map[<a href="/pkg/builtin/#string">string</a>]interface{}</pre>
+			<p>
+JsonMap is a Go map representing a JSON object (dictionary).
+The keys are the JSON field names.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="JsonMap.AddDepVTag">func (*JsonMap) <a href="/src/target/meta.go?s=2091:2133#L69">AddDepVTag</a></h3>
+				<pre>func (this *<a href="#JsonMap">JsonMap</a>) AddDepVTag(vtag <a href="#VTag">VTag</a>)</pre>
+				<p>
+AddDepVTag adds a dependent vtag to the meta section
+of a JSON message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="JsonMap.GetCostType">func (*JsonMap) <a href="/src/target/meta.go?s=917:960#L25">GetCostType</a></h3>
+				<pre>func (this *<a href="#JsonMap">JsonMap</a>) GetCostType() <a href="#CostType">CostType</a></pre>
+				<p>
+GetCostType returns the CostType from the meta section
+of a JSON message. Missing values are &#34;&#34;.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="JsonMap.GetDepVTags">func (*JsonMap) <a href="/src/target/meta.go?s=2556:2597#L84">GetDepVTags</a></h3>
+				<pre>func (this *<a href="#JsonMap">JsonMap</a>) GetDepVTags() []<a href="#VTag">VTag</a></pre>
+				<p>
+GetDepVTags returns a slice with the dependent vtags
+in the meta section of a JSON message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="JsonMap.GetMeta">func (*JsonMap) <a href="/src/target/meta.go?s=263:328#L1">GetMeta</a></h3>
+				<pre>func (this *<a href="#JsonMap">JsonMap</a>) GetMeta(create <a href="/pkg/builtin/#bool">bool</a>) *map[<a href="/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+GetMeta returns a map for the meta field in a JSON message.
+If create is true, it creates a map for meta if it does not exist.
+If create is false and meta is missing, it returns nil.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="JsonMap.GetVTag">func (*JsonMap) <a href="/src/target/meta.go?s=1702:1737#L52">GetVTag</a></h3>
+				<pre>func (this *<a href="#JsonMap">JsonMap</a>) GetVTag() <a href="#VTag">VTag</a></pre>
+				<p>
+GetVTag returns the VTag for this resource from the meta section
+of a JSON message. Missing values are &#34;&#34;.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="JsonMap.SetCostType">func (*JsonMap) <a href="/src/target/meta.go?s=621:672#L16">SetCostType</a></h3>
+				<pre>func (this *<a href="#JsonMap">JsonMap</a>) SetCostType(costType <a href="#CostType">CostType</a>)</pre>
+				<p>
+SetCostType sets the cost-type field in the meta section
+of a JSON message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="JsonMap.SetVTag">func (*JsonMap) <a href="/src/target/meta.go?s=1424:1463#L43">SetVTag</a></h3>
+				<pre>func (this *<a href="#JsonMap">JsonMap</a>) SetVTag(vtag <a href="#VTag">VTag</a>)</pre>
+				<p>
+SetVTag sets the VTag field in the meta section
+of a JSON message. This is the VTag for the resource in this message.
+Use AddDepVTag() to set dependent vtags.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="NetworkMap">type <a href="/src/target/networkmap.go?s=245:765#L7">NetworkMap</a></h2>
+			<pre>type NetworkMap struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+CoatMap represents an ALTO NetworkMap response.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewNetworkMap">func <a href="/src/target/networkmap.go?s=1163:1195#L38">NewNetworkMap</a></h3>
+				<pre>func NewNetworkMap() *<a href="#NetworkMap">NetworkMap</a></pre>
+				<p>
+NewNetworkMap() creates an empty network map.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="NetworkMap.AddCIDR">func (*NetworkMap) <a href="/src/target/networkmap.go?s=2807:2872#L96">AddCIDR</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) AddCIDR(pid, addrType, cidr <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+AddCIDR() assigns a CIDR to a PID.
+Return an error if cidr is invalid, or is not of addrType,
+or has been assigned to a different pid.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.AddCIDRs">func (*NetworkMap) <a href="/src/target/networkmap.go?s=2406:2484#L82">AddCIDRs</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) AddCIDRs(pid, addrtype <a href="/pkg/builtin/#string">string</a>, cidrs []<a href="/pkg/builtin/#string">string</a>) []<a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+SetAddrType() assigns a list of CIDRs to a pid.
+This returns an []error for any errors encountered.
+If there are no errors, this returns a 0-length array.
+Error include badly formatted CIDRs, CIDRs with an address
+type other than addrType, and CIDRs previously assigned
+to another PID. This function will assign the valid CIDRs
+to the PID, even if there are errors.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.CIDRIter">func (*NetworkMap) <a href="/src/target/networkmap.go?s=5424:5494#L195">CIDRIter</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) CIDRIter(f func(cidrInfo *<a href="#CIDRInfo">CIDRInfo</a>) <a href="/pkg/builtin/#bool">bool</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+CIDRIter() calls f() on all CIDRs in this network map,
+starting with the longest CIDR.
+If f() returns false, CIDRIter() stops and returns false.
+f() MUST NOT change the CIDR information.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.FromJsonMap">func (*NetworkMap) <a href="/src/target/networkmap.go?s=6632:6687#L236">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) []<a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+It returns an array with the errors encountered.
+If okay, it returns 0-length array.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.IP2Pid">func (*NetworkMap) <a href="/src/target/networkmap.go?s=4940:5021#L177">IP2Pid</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) IP2Pid(addr <a href="/pkg/net/">net</a>.<a href="/pkg/net/#IP">IP</a>) (pid <a href="/pkg/builtin/#string">string</a>, cidr <a href="/pkg/net/">net</a>.<a href="/pkg/net/#IPNet">IPNet</a>, ok <a href="/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+IP2Pid() returns the PID for an IP address,
+and the longest CIDR which contains that address.
+&#34;ok&#34; is true if some PID contains the address,
+or false if that address is not in any PID.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.MediaType">func (*NetworkMap) <a href="/src/target/networkmap.go?s=1725:1767#L61">MediaType</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.PidAddrs">func (*NetworkMap) <a href="/src/target/networkmap.go?s=4591:4674#L167">PidAddrs</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) PidAddrs(pid <a href="/pkg/builtin/#string">string</a>) (cidrMap map[<a href="/pkg/builtin/#string">string</a>][]<a href="/pkg/builtin/#string">string</a>, ok <a href="/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+PidAddrs() returns the address type map for &#34;pid&#34;.
+The keys are address types, and the values are arrays of CIDR strings.
+If pid does not exist, return false for ok.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.PidIter">func (*NetworkMap) <a href="/src/target/networkmap.go?s=5798:5875#L208">PidIter</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) PidIter(f func(pid, addrtype, cidr <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#bool">bool</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+PidIter() calls f(pid, addrtype, addr) for all pids and addresses.
+If f() returns false, PidIter() stops and returns false.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.Print">func (*NetworkMap) <a href="/src/target/networkmap.go?s=7493:7535#L268">Print</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) Print(w <a href="/pkg/io/">io</a>.<a href="/pkg/io/#Writer">Writer</a>)</pre>
+				<p>
+Print() writes a nicely formatted version of this network map to w.
+Note: The output is not repeatable, because the PID &lt;=&gt; CIDR maps
+are printed in GO&#39;s map-traversal order, which is unpredictable.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.SetVTag">func (*NetworkMap) <a href="/src/target/networkmap.go?s=1953:1995#L71">SetVTag</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) SetVTag(vtag <a href="#VTag">VTag</a>)</pre>
+				<p>
+SetVTag() sets the VTag for this network map.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.ToJsonMap">func (*NetworkMap) <a href="/src/target/networkmap.go?s=6333:6376#L226">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this structure.
+The created map has a pointer to the data in this structure,
+rather than a deep copy. Hence you must not change
+the map data after calling this function.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMap.VTag">func (*NetworkMap) <a href="/src/target/networkmap.go?s=1845:1880#L66">VTag</a></h3>
+				<pre>func (this *<a href="#NetworkMap">NetworkMap</a>) VTag() <a href="#VTag">VTag</a></pre>
+				<p>
+VTag() returns the VTag for this network map.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="NetworkMapFilter">type <a href="/src/target/networkmapfilter.go?s=179:422#L1">NetworkMapFilter</a></h2>
+			<pre>type NetworkMapFilter struct {
+    <span class="comment">// Pids has the requested PIDs.</span>
+    <span class="comment">// nil or 0-length means return all PIDs.</span>
+    Pids []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// AddrTypes has the requested address types.</span>
+    <span class="comment">// nil or 0-length means return all address types.</span>
+    AddrTypes []<a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+NetworkMapFilter represents an ALTO network map filter request.
+It implements the AltoMsg interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewNetworkMapFilter">func <a href="/src/target/networkmapfilter.go?s=576:620#L14">NewNetworkMapFilter</a></h3>
+				<pre>func NewNetworkMapFilter() *<a href="#NetworkMapFilter">NetworkMapFilter</a></pre>
+				<p>
+NewNetworkMapFilter creates a new NetworkMapFilter message.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="NetworkMapFilter.FromJsonMap">func (*NetworkMapFilter) <a href="/src/target/networkmapfilter.go?s=1201:1271#L38">FromJsonMap</a></h3>
+				<pre>func (this *<a href="#NetworkMapFilter">NetworkMapFilter</a>) FromJsonMap(jm <a href="#JsonMap">JsonMap</a>) (errors []<a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+FromJsonMap() copies the JSON fields in a map into this structure.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMapFilter.MediaType">func (*NetworkMapFilter) <a href="/src/target/networkmapfilter.go?s=754:802#L20">MediaType</a></h3>
+				<pre>func (this *<a href="#NetworkMapFilter">NetworkMapFilter</a>) MediaType() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+MediaType() returns the media-type for this message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NetworkMapFilter.ToJsonMap">func (*NetworkMapFilter) <a href="/src/target/networkmapfilter.go?s=921:970#L26">ToJsonMap</a></h3>
+				<pre>func (this *<a href="#NetworkMapFilter">NetworkMapFilter</a>) ToJsonMap() <a href="#JsonMap">JsonMap</a></pre>
+				<p>
+ToJsonMap() returns a map with the JSON fields
+for the data in this message.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Resource">type <a href="/src/target/resourceset.go?s=931:1775#L26">Resource</a></h2>
+			<pre>type Resource struct {
+    <span class="comment">// Id is the resource&#39;s unique ID.</span>
+    Id <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// URI is the resource&#39;s URI. It is never nil.</span>
+    <span class="comment">// The URI field always has scheme and server,</span>
+    <span class="comment">// even if the URI string in the IRD was relative.</span>
+    URI *<a href="/pkg/net/url/">url</a>.<a href="/pkg/net/url/#URL">URL</a>
+
+    <span class="comment">// MediaType is the response type for this resource.</span>
+    MediaType <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Accepts is the media type of requests for this resource.</span>
+    <span class="comment">// If &#34;&#34;, this is a get-mode resource.</span>
+    Accepts <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Uses has the ID&#39;s of the resources upon which this resource depends.</span>
+    <span class="comment">// May be nil.</span>
+    Uses []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// CostTypes has the cost types this resource can return.</span>
+    <span class="comment">// May be nil.</span>
+    CostTypes []<a href="#CostType">CostType</a>
+
+    <span class="comment">// CostConstraints is true iff this resource accepts cost constraint tests.</span>
+    CostConstraints <a href="/pkg/builtin/#bool">bool</a>
+
+    <span class="comment">// PropTypes has the names of the properties this resource can return.</span>
+    <span class="comment">// May be nil.</span>
+    PropTypes []<a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+Resource describes a resource provided by the server.
+This is similar to DirResource, except that a Resource
+has a fully parsed URI, and the cost metrics &amp; modes
+rather than cost type names.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewResource">func <a href="/src/target/resourceset.go?s=2126:2255#L64">NewResource</a></h3>
+				<pre>func NewResource(dirURI *<a href="/pkg/net/url/">url</a>.<a href="/pkg/net/url/#URL">URL</a>,
+    dirRes *<a href="#DirResource">DirResource</a>,
+    costTypeDefns map[<a href="/pkg/builtin/#string">string</a>]<a href="#CostTypeDescription">CostTypeDescription</a>) (*<a href="#Resource">Resource</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewResource() returns a Resource for an entry in an IRD.
+dirURI is the parsed URI of the IRD, and is used as the context
+if the resource has a relative URI.
+costTypeDefns is the name to CostType map in the IRD, or nil.
+Return an error if the resource&#39;s URI is invalid,
+or if it has a cost type name that is not defined in the IRD.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Resource.Equal">func (*Resource) <a href="/src/target/resourceset.go?s=3147:3196#L100">Equal</a></h3>
+				<pre>func (this *<a href="#Resource">Resource</a>) Equal(other *<a href="#Resource">Resource</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Equal() returns true iff two Resources are identical.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Resource.Print">func (*Resource) <a href="/src/target/resourceset.go?s=8488:8543#L268">Print</a></h3>
+				<pre>func (this *<a href="#Resource">Resource</a>) Print(w <a href="/pkg/io/">io</a>.<a href="/pkg/io/#Writer">Writer</a>, prefix <a href="/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Print() prints a Resource.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ResourceSet">type <a href="/src/target/resourceset.go?s=255:578#L4">ResourceSet</a></h2>
+			<pre>type ResourceSet struct {
+    <span class="comment">// URI is the URI of the root Information Resource Directory.</span>
+    URI <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Resources has the resources in this set.</span>
+    <span class="comment">// The keys are the resource IDs.</span>
+    Resources map[<a href="/pkg/builtin/#string">string</a>]*<a href="#Resource">Resource</a>
+
+    <span class="comment">// DefNetworkMapId is the resource id of the default network map.</span>
+    <span class="comment">// May be &#34;&#34;.</span>
+    DefNetworkMapId <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+ResourceSet has the resources provided by an ALTO server.
+This includes the resources in the root IRD plus
+those in all the dependent IRDs (if any).
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewResourceSet">func <a href="/src/target/resourceset.go?s=632:666#L18">NewResourceSet</a></h3>
+				<pre>func NewResourceSet() *<a href="#ResourceSet">ResourceSet</a></pre>
+				<p>
+NewResourceSet returns a new, empty ResourceSet.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ResourceSet.AddResources">func (*ResourceSet) <a href="/src/target/resourceset.go?s=3785:3863#L117">AddResources</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) AddResources(dir *<a href="#Directory">Directory</a>, dirURI *<a href="/pkg/net/url/">url</a>.<a href="/pkg/net/url/#URL">URL</a>) []<a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+AddResources() adds all resources in a Directory to this ResourceSet,
+and returns an array with any errors encountered.
+If there were no errors, AddResources() returns a 0-length array.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ResourceSet.FindCostMap">func (*ResourceSet) <a href="/src/target/resourceset.go?s=6088:6187#L192">FindCostMap</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) FindCostMap(
+    netmap <a href="/pkg/builtin/#string">string</a>,
+    costType <a href="#CostType">CostType</a>) *<a href="#Resource">Resource</a></pre>
+				<p>
+FindCostMap() returns the first CostMap resource
+which returns costType for the NetworkMap resource netmap.
+Return nil if there is no such resource.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ResourceSet.FindDefNetworkMap">func (*ResourceSet) <a href="/src/target/resourceset.go?s=4743:4797#L145">FindDefNetworkMap</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) FindDefNetworkMap() *<a href="#Resource">Resource</a></pre>
+				<p>
+FindDefNetworkMap() returns the default NetworkMap resource.
+If there is no explicit default, and there is only one NetworkMap,
+return it. If there is more than one NetworkMap, return nil.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ResourceSet.FindEndpointCost">func (*ResourceSet) <a href="/src/target/resourceset.go?s=7348:7459#L230">FindEndpointCost</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) FindEndpointCost(
+    costType <a href="#CostType">CostType</a>,
+    needConstraints <a href="/pkg/builtin/#bool">bool</a>) *<a href="#Resource">Resource</a></pre>
+				<p>
+FindEndpointCost() returns the first EndpointCost resource
+which returns costType. If needConstraints is true,
+return the resource which accepts cost constraints.
+Return nil if there is no such resource.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ResourceSet.FindEndpointProp">func (*ResourceSet) <a href="/src/target/resourceset.go?s=7888:7959#L247">FindEndpointProp</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) FindEndpointProp(propTypes []<a href="/pkg/builtin/#string">string</a>) *<a href="#Resource">Resource</a></pre>
+				<p>
+FindEndpointProp() returns the first EndpointProp resource
+which returns all the property types in propTypes.
+Return nil if there is no such resource.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ResourceSet.FindFilteredCostMap">func (*ResourceSet) <a href="/src/target/resourceset.go?s=6686:6824#L210">FindFilteredCostMap</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) FindFilteredCostMap(
+    netmap <a href="/pkg/builtin/#string">string</a>,
+    costType <a href="#CostType">CostType</a>,
+    needConstraints <a href="/pkg/builtin/#bool">bool</a>) *<a href="#Resource">Resource</a></pre>
+				<p>
+FindFilteredCostMap() returns the first FilteredCostMap resource
+which returns costType for the NetworkMap resource netmap.
+If needConstraints is true, return the resource which accepts cost constraints.
+Return nil if there is no such resource.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ResourceSet.FindFilteredNetworkMap">func (*ResourceSet) <a href="/src/target/resourceset.go?s=5648:5720#L178">FindFilteredNetworkMap</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) FindFilteredNetworkMap(netmap <a href="/pkg/builtin/#string">string</a>) *<a href="#Resource">Resource</a></pre>
+				<p>
+FindFilteredNetworkMap() returns the first FilteredNetworkMap resource
+which the NetworkMap resource netmap.
+Return nil if there is no such resource.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ResourceSet.FindNetworkMaps">func (*ResourceSet) <a href="/src/target/resourceset.go?s=5248:5302#L165">FindNetworkMaps</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) FindNetworkMaps() []*<a href="#Resource">Resource</a></pre>
+				<p>
+FindNetworkMaps() returns all NetworkMap resources.
+If there are none, it returns a 0-length array.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ResourceSet.Print">func (*ResourceSet) <a href="/src/target/resourceset.go?s=8217:8260#L259">Print</a></h3>
+				<pre>func (this *<a href="#ResourceSet">ResourceSet</a>) Print(w <a href="/pkg/io/">io</a>.<a href="/pkg/io/#Writer">Writer</a>)</pre>
+				<p>
+Print() prints a ResourceSet.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ServerResp">type <a href="/src/target/altoconn.go?s=1444:2763#L48">ServerResp</a></h2>
+			<pre>type ServerResp struct {
+    <span class="comment">// OkResp is the server&#39;s response to a successful request.</span>
+    <span class="comment">// If the server returned an ALTO error response,</span>
+    <span class="comment">// ErrorResp has the error, and OkResp is nil.</span>
+    OkResp <a href="#AltoMsg">AltoMsg</a>
+
+    <span class="comment">// ErrorResp is the server&#39;s error response, or nil.</span>
+    ErrorResp *<a href="#ErrorResp">ErrorResp</a>
+
+    <span class="comment">// Errors has any other errors which occured:</span>
+    <span class="comment">// connection error, the server did not return</span>
+    <span class="comment">// valid JSON, etc. If the server returns an ALTO</span>
+    <span class="comment">// error, ErrorResp has the error and Errors is nil or 0-length.</span>
+    Errors []<a href="/pkg/builtin/#error">error</a>
+
+    <span class="comment">// URI is the URI to which the request was sent.</span>
+    URI <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Request is the request body sent for a POST request.</span>
+    <span class="comment">// nil for a GET request.</span>
+    Request <a href="#AltoMsg">AltoMsg</a>
+
+    <span class="comment">// HaveResponse is true iff the server sent a response.</span>
+    <span class="comment">// If HaveResponse is false, ContentType, ContentLength, etc,</span>
+    <span class="comment">// have their default initial values, and should be ignored.</span>
+    HaveResponse <a href="/pkg/builtin/#bool">bool</a>
+
+    <span class="comment">// ContentType is the content type returned by the server.</span>
+    ContentType <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// ContentLength has the length of the message returned by the server.</span>
+    ContentLength <a href="/pkg/builtin/#int64">int64</a>
+
+    <span class="comment">// Status has the HTTP status meesage returned by the server.</span>
+    <span class="comment">// E.g., &#34;200 OK&#34;.</span>
+    Status <a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">// StatusCode has the integer HTTP status code (extracted from Status).</span>
+    StatusCode <a href="/pkg/builtin/#int">int</a>
+
+    <span class="comment">// RespTime has the server&#39;s response time.</span>
+    RespTime <a href="/pkg/time/">time</a>.<a href="/pkg/time/#Duration">Duration</a>
+}</pre>
+			<p>
+ServerResp describes the ALTO server&#39;s response to a request.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="VTag">type <a href="/src/target/common.go?s=3313:3364#L118">VTag</a></h2>
+			<pre>type VTag struct {
+    ResourceId <a href="/pkg/builtin/#string">string</a>
+    Tag        <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+VTag is an ALTO version tag, with a resource id and a tag.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
